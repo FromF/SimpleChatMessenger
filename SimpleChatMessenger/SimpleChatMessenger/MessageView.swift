@@ -10,9 +10,28 @@ import SwiftUI
 
 struct MessageView: View {
     var name = ""
+    @ObservedObject var messageVM = messageViewModel()
+    @State var typeMessage = ""
     
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            List(messageVM.messages, id: \.id) {i in
+                Text(i.message)
+            }
+            .navigationBarTitle("Chats",displayMode: .large)
+            HStack {
+                TextField("Message", text: $typeMessage)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button(action: {
+                    self.messageVM.addMessage(message: self.typeMessage, user: self.name)
+                    self.typeMessage = ""
+                }) {
+                    Text("Send")
+                }
+            }
+            .padding()
+        }
     }
 }
 
