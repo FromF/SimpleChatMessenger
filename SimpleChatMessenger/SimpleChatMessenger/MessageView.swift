@@ -31,7 +31,7 @@ struct MessageView: View {
                     self.messageVM.addMessage(message: self.typeMessage, user: self.name)
                     self.typeMessage = ""
                 }) {
-                    Text("Send")
+                    Image(systemName: "arrow.up.circle.fill")
                 }
             }
             .padding()
