@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class messageViewModel: ObservableObject {
+class MessageViewModel: ObservableObject {
     @Published var messages = [messageDataType]()
     
     init() {

@@ -1,5 +1,5 @@
 //
-//  messageRow.swift
+//  MessageRow.swift
 //  SimpleChatMessenger
 //
 //  Created by 藤治仁 on 2019/12/27.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct messageRow: View {
+struct MessageRow: View {
     var message = ""
     var isMyMessage = false
     var user = ""
@@ -42,6 +42,6 @@ struct messageRow: View {
 
 struct messageRow_Previews: PreviewProvider {
     static var previews: some View {
-        messageRow(message: "Hoge", isMyMessage: true)
+        MessageRow(message: "Hoge", isMyMessage: true)
     }
 }

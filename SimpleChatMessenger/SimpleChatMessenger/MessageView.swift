@@ -10,16 +10,16 @@ import SwiftUI
 
 struct MessageView: View {
     var name = ""
-    @ObservedObject var messageVM = messageViewModel()
+    @ObservedObject var messageVM = MessageViewModel()
     @State var typeMessage = ""
     
     var body: some View {
         VStack {
             List(messageVM.messages, id: \.id) {i in
                 if i.name == self.name {
-                    messageRow(message: i.message, isMyMessage: true, user:i.name)
+                    MessageRow(message: i.message, isMyMessage: true, user:i.name)
                 } else {
-                    messageRow(message: i.message, isMyMessage: false, user:i.name)
+                    MessageRow(message: i.message, isMyMessage: false, user:i.name)
                 }
             }
             .navigationBarTitle("Chats",displayMode: .inline)
