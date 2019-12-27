@@ -42,6 +42,6 @@ struct MessageRow: View {
 
 struct messageRow_Previews: PreviewProvider {
     static var previews: some View {
-        MessageRow(message: "Hoge", isMyMessage: true)
+        MessageRow(message: "Hoge", isMyMessage: false, user: "other")
     }
 }
