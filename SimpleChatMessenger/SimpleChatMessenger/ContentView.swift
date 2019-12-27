@@ -24,23 +24,25 @@ struct ContentView: View {
                         .padding(.top, 12)
                     
                     TextField("Name ", text: $name)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     
-                    NavigationLink(destination: MessageView(name: name)) {
-                        HStack {
-                            Text("Join")
-                            Image(systemName: "arrow.right.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
+                    if name != "" {
+                        NavigationLink(destination: MessageView(name: name)) {
+                            HStack {
+                                Text("Join")
+                                Image(systemName: "arrow.right.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                            }
+                            
                         }
-                        
+                        .frame(width: 100, height: 54)
+                        .background(Color.orange)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(27)
+                        .padding(.bottom, 15)
                     }
-                    .frame(width: 100, height: 54)
-                    .background(Color.orange)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(27)
-                    .padding(.bottom, 15)
                 }
                 .background(Color.white)
                 .cornerRadius(20)
@@ -48,6 +50,7 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
+        .animation(.default)
     }
 }
 

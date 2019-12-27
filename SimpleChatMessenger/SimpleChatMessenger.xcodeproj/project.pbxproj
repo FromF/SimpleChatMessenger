@@ -11,6 +11,7 @@
 		9D4A512223B5793D005DFEA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */; };
 		9D4A512423B57B2F005DFEA7 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512323B57B2F005DFEA7 /* MessageView.swift */; };
 		9D4A512623B5C7CA005DFEA7 /* MessageVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */; };
+		9D4A512823B5D46B005DFEA7 /* messageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512723B5D46B005DFEA7 /* messageRow.swift */; };
 		9D8B030E23B49482000FF55B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B030D23B49482000FF55B /* AppDelegate.swift */; };
 		9D8B031023B49482000FF55B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B030F23B49482000FF55B /* SceneDelegate.swift */; };
 		9D8B031223B49482000FF55B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B031123B49482000FF55B /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 		9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D4A512323B57B2F005DFEA7 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVIewModel.swift; sourceTree = "<group>"; };
+		9D4A512723B5D46B005DFEA7 /* messageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageRow.swift; sourceTree = "<group>"; };
 		9D8B030A23B49482000FF55B /* SimpleChatMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleChatMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8B030D23B49482000FF55B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D8B030F23B49482000FF55B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				9D8B030F23B49482000FF55B /* SceneDelegate.swift */,
 				9D8B031123B49482000FF55B /* ContentView.swift */,
 				9D4A512323B57B2F005DFEA7 /* MessageView.swift */,
+				9D4A512723B5D46B005DFEA7 /* messageRow.swift */,
 				9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */,
 				9D8B031323B49485000FF55B /* Assets.xcassets */,
 				9D8B031823B49485000FF55B /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4A512823B5D46B005DFEA7 /* messageRow.swift in Sources */,
 				9D4A512423B57B2F005DFEA7 /* MessageView.swift in Sources */,
 				9D4A512623B5C7CA005DFEA7 /* MessageVIewModel.swift in Sources */,
 				9D8B030E23B49482000FF55B /* AppDelegate.swift in Sources */,

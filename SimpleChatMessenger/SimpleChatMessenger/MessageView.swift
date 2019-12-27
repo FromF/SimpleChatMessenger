@@ -16,9 +16,13 @@ struct MessageView: View {
     var body: some View {
         VStack {
             List(messageVM.messages, id: \.id) {i in
-                Text(i.message)
+                if i.name == self.name {
+                    messageRow(message: i.message, isMyMessage: true, user:i.name)
+                } else {
+                    messageRow(message: i.message, isMyMessage: false, user:i.name)
+                }
             }
-            .navigationBarTitle("Chats",displayMode: .large)
+            .navigationBarTitle("Chats",displayMode: .inline)
             HStack {
                 TextField("Message", text: $typeMessage)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
