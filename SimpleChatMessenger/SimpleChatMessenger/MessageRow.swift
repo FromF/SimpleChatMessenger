@@ -42,7 +42,7 @@ struct MessageRow: View {
 
 struct messageRow_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        List {
             MessageRow(message: "Hoge", isMyMessage: false, user: "other")
             MessageRow(message: "Hoge", isMyMessage: true, user: "other")
         }
