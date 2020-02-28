@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MessageView: View {
     var name = ""
+    var uid = ""
     @ObservedObject var messageVM = MessageViewModel()
     @State var typeMessage = ""
     
@@ -28,7 +29,7 @@ struct MessageView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button(action: {
-                    self.messageVM.addMessage(message: self.typeMessage, user: self.name)
+                    self.messageVM.addMessage(message: self.typeMessage, user: self.name, uid: self.uid)
                     self.typeMessage = ""
                 }) {
                     Image(systemName: "arrow.up.circle.fill")

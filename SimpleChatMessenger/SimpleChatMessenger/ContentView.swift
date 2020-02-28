@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     @State var name = ""
+    @State var uid = ""
     
     var body: some View {
         NavigationView {
@@ -27,8 +29,8 @@ struct ContentView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     
-                    if name != "" {
-                        NavigationLink(destination: MessageView(name: name)) {
+                    if name != "" && uid != "" {
+                        NavigationLink(destination: MessageView(name: name, uid: uid)) {
                             HStack {
                                 Text("Join")
                                 Image(systemName: "arrow.right.circle.fill")
@@ -51,6 +53,10 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
         }
         .animation(.default)
+        .onAppear() {
+            guard let user = Auth.auth().currentUser else { return }
+            self.uid = user.uid
+        }
     }
 }
 

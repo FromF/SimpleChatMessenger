@@ -7,4 +7,5 @@ target 'SimpleChatMessenger' do
 
   # Pods for SimpleChatMessenger
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 end

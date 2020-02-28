@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Firebaseの初期化
         FirebaseApp.configure()
+        
+        Auth.auth().signInAnonymously { (authResult, error) in
+            //
+            
+        }
         return true
     }
 

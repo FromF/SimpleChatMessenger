@@ -25,19 +25,21 @@ class MessageViewModel: ObservableObject {
                     if i.type == .added {
                         let name = i.document.get("name") as! String
                         let message = i.document.get("message") as! String
+                        let uid = i.document.get("uid") as! String
                         let id = i.document.documentID
                         
-                        self.messages.append(messageDataType(id: id, name: name, message: message))
+                        self.messages.append(messageDataType(id: id, uid: uid, name: name, message: message))
                     }
                 }
             }
         }
     }
     
-    func addMessage(message: String , user: String) {
+    func addMessage(message: String , user: String , uid: String) {
         let data = [
             "message": message,
-            "name": user
+            "name": user,
+            "uid": uid
         ]
         
         let db = Firestore.firestore()
@@ -57,6 +59,7 @@ class MessageViewModel: ObservableObject {
 
 struct messageDataType: Identifiable {
     var id: String
+    var uid: String
     var name: String
     var message: String
 }
