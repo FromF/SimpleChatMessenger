@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		849F65EC8FE39AAD314D3AB6 /* Pods_SimpleChatMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB09B177E6C0FFD210545E5 /* Pods_SimpleChatMessenger.framework */; };
+		9D346CF826496AEA009A858C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D346CF726496AEA009A858C /* FirebaseFirestore */; };
 		9D4A512223B5793D005DFEA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */; };
 		9D4A512423B57B2F005DFEA7 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512323B57B2F005DFEA7 /* MessageView.swift */; };
 		9D4A512623B5C7CA005DFEA7 /* MessageVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */; };
@@ -21,8 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		15BE59AA43F702D2A6A9BED0 /* Pods-SimpleChatMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleChatMessenger.debug.xcconfig"; path = "Target Support Files/Pods-SimpleChatMessenger/Pods-SimpleChatMessenger.debug.xcconfig"; sourceTree = "<group>"; };
-		7BB09B177E6C0FFD210545E5 /* Pods_SimpleChatMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleChatMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D4A512323B57B2F005DFEA7 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVIewModel.swift; sourceTree = "<group>"; };
@@ -35,7 +33,6 @@
 		9D8B031623B49485000FF55B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D8B031923B49485000FF55B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D8B031B23B49485000FF55B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7DAFB7CACA18BC9D3140F5E /* Pods-SimpleChatMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleChatMessenger.release.xcconfig"; path = "Target Support Files/Pods-SimpleChatMessenger/Pods-SimpleChatMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,37 +40,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849F65EC8FE39AAD314D3AB6 /* Pods_SimpleChatMessenger.framework in Frameworks */,
+				9D346CF826496AEA009A858C /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52F5922E8DDD301AEC008ADB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				15BE59AA43F702D2A6A9BED0 /* Pods-SimpleChatMessenger.debug.xcconfig */,
-				E7DAFB7CACA18BC9D3140F5E /* Pods-SimpleChatMessenger.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		83EBBCA938C5211C1D467085 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7BB09B177E6C0FFD210545E5 /* Pods_SimpleChatMessenger.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9D8B030123B49482000FF55B = {
 			isa = PBXGroup;
 			children = (
 				9D8B030C23B49482000FF55B /* SimpleChatMessenger */,
 				9D8B030B23B49482000FF55B /* Products */,
-				52F5922E8DDD301AEC008ADB /* Pods */,
-				83EBBCA938C5211C1D467085 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,17 +96,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D8B031E23B49485000FF55B /* Build configuration list for PBXNativeTarget "SimpleChatMessenger" */;
 			buildPhases = (
-				2F3AB1A57865976DA1CFBD6C /* [CP] Check Pods Manifest.lock */,
 				9D8B030623B49482000FF55B /* Sources */,
 				9D8B030723B49482000FF55B /* Frameworks */,
 				9D8B030823B49482000FF55B /* Resources */,
-				C1A44C29A147E4A569E33D84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SimpleChatMessenger;
+			packageProductDependencies = (
+				9D346CF726496AEA009A858C /* FirebaseFirestore */,
+			);
 			productName = SimpleChatMessenger;
 			productReference = 9D8B030A23B49482000FF55B /* SimpleChatMessenger.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 9D8B030123B49482000FF55B;
+			packageReferences = (
+				9D346CF626496AEA009A858C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9D8B030B23B49482000FF55B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,48 +161,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2F3AB1A57865976DA1CFBD6C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimpleChatMessenger-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1A44C29A147E4A569E33D84 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleChatMessenger/Pods-SimpleChatMessenger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleChatMessenger/Pods-SimpleChatMessenger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleChatMessenger/Pods-SimpleChatMessenger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D8B030623B49482000FF55B /* Sources */ = {
@@ -366,7 +306,6 @@
 		};
 		9D8B031F23B49485000FF55B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15BE59AA43F702D2A6A9BED0 /* Pods-SimpleChatMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,7 +325,6 @@
 		};
 		9D8B032023B49485000FF55B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7DAFB7CACA18BC9D3140F5E /* Pods-SimpleChatMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -426,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D346CF626496AEA009A858C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D346CF726496AEA009A858C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D346CF626496AEA009A858C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D8B030223B49482000FF55B /* Project object */;
 }
