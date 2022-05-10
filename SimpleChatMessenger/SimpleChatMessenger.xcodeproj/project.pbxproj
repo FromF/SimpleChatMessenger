@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D059A4A282A36C400C50A13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */; };
+		9D059A4C282A389700C50A13 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059A4B282A389700C50A13 /* DateExtension.swift */; };
+		9D059A4E282A3A7600C50A13 /* MessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059A4D282A3A7600C50A13 /* MessageElement.swift */; };
 		9D346CF826496AEA009A858C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D346CF726496AEA009A858C /* FirebaseFirestore */; };
-		9D4A512223B5793D005DFEA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */; };
 		9D4A512423B57B2F005DFEA7 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512323B57B2F005DFEA7 /* MessageView.swift */; };
 		9D4A512623B5C7CA005DFEA7 /* MessageVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */; };
 		9D4A512823B5D46B005DFEA7 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A512723B5D46B005DFEA7 /* MessageRow.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D059A4B282A389700C50A13 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9D059A4D282A3A7600C50A13 /* MessageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageElement.swift; sourceTree = "<group>"; };
 		9D4A512123B5793D005DFEA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D4A512323B57B2F005DFEA7 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVIewModel.swift; sourceTree = "<group>"; };
@@ -68,9 +72,11 @@
 			children = (
 				9D8B030D23B49482000FF55B /* AppDelegate.swift */,
 				9D8B030F23B49482000FF55B /* SceneDelegate.swift */,
+				9D059A4B282A389700C50A13 /* DateExtension.swift */,
 				9D8B031123B49482000FF55B /* ContentView.swift */,
 				9D4A512323B57B2F005DFEA7 /* MessageView.swift */,
 				9D4A512723B5D46B005DFEA7 /* MessageRow.swift */,
+				9D059A4D282A3A7600C50A13 /* MessageElement.swift */,
 				9D4A512523B5C7C9005DFEA7 /* MessageVIewModel.swift */,
 				9D8B031323B49485000FF55B /* Assets.xcassets */,
 				9D8B031823B49485000FF55B /* LaunchScreen.storyboard */,
@@ -119,7 +125,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "F-Works";
 				TargetAttributes = {
 					9D8B030923B49482000FF55B = {
@@ -154,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8B031A23B49485000FF55B /* LaunchScreen.storyboard in Resources */,
-				9D4A512223B5793D005DFEA7 /* GoogleService-Info.plist in Resources */,
+				9D059A4A282A36C400C50A13 /* GoogleService-Info.plist in Resources */,
 				9D8B031723B49485000FF55B /* Preview Assets.xcassets in Resources */,
 				9D8B031423B49485000FF55B /* Assets.xcassets in Resources */,
 			);
@@ -168,10 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4A512823B5D46B005DFEA7 /* MessageRow.swift in Sources */,
+				9D059A4C282A389700C50A13 /* DateExtension.swift in Sources */,
 				9D4A512423B57B2F005DFEA7 /* MessageView.swift in Sources */,
 				9D4A512623B5C7CA005DFEA7 /* MessageVIewModel.swift in Sources */,
 				9D8B030E23B49482000FF55B /* AppDelegate.swift in Sources */,
 				9D8B031023B49482000FF55B /* SceneDelegate.swift in Sources */,
+				9D059A4E282A3A7600C50A13 /* MessageElement.swift in Sources */,
 				9D8B031223B49482000FF55B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +224,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -240,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -276,6 +285,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -294,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -312,6 +322,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleChatMessenger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SimpleChatMessenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +342,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleChatMessenger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SimpleChatMessenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +383,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.1;
+				minimumVersion = 9.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

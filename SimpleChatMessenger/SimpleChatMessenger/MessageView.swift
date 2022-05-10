@@ -17,9 +17,9 @@ struct MessageView: View {
         VStack {
             List(messageVM.messages, id: \.id) {i in
                 if i.name == self.name {
-                    MessageRow(message: i.message, isMyMessage: true, user:i.name)
+                    MessageRow(message: i.message, isMyMessage: true, user:i.name, date: i.createAt)
                 } else {
-                    MessageRow(message: i.message, isMyMessage: false, user:i.name)
+                    MessageRow(message: i.message, isMyMessage: false, user:i.name, date: i.createAt)
                 }
             }
             .navigationBarTitle("Chats",displayMode: .inline)

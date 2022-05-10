@@ -9,29 +9,39 @@
 import SwiftUI
 
 struct MessageRow: View {
-    var message = ""
-    var isMyMessage = false
-    var user = ""
+    let message: String
+    let isMyMessage: Bool
+    let user: String
+    let date: Date
     
     var body: some View {
         HStack {
             if isMyMessage {
                 Spacer()
                 
-                Text(message)
-                .padding(8)
-                .background(Color.red)
-                .cornerRadius(6)
-                .foregroundColor(Color.white)
+                VStack {
+                    Text(message)
+                        .padding(8)
+                        .background(Color.red)
+                        .cornerRadius(6)
+                        .foregroundColor(Color.white)
+                    Text(date.text)
+                        .font(.callout)
+                }
             } else {
                 VStack(alignment: .leading) {
                     Text(message)
-                    .padding(8)
-                    .background(Color.green)
-                    .cornerRadius(6)
-                    .foregroundColor(Color.white)
+                        .padding(8)
+                        .background(Color.green)
+                        .cornerRadius(6)
+                        .foregroundColor(Color.white)
                     
-                    Text(user)
+                    HStack {
+                        Text(user)
+                        
+                        Text(date.text)
+                            .font(.callout)
+                    }
                 }
                 
                 Spacer()
@@ -43,8 +53,8 @@ struct MessageRow: View {
 struct messageRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            MessageRow(message: "Hoge", isMyMessage: false, user: "other")
-            MessageRow(message: "Hoge", isMyMessage: true, user: "other")
+            MessageRow(message: "Hoge", isMyMessage: false, user: "other", date: Date())
+            MessageRow(message: "Hoge", isMyMessage: true, user: "other", date: Date())
         }
     }
 }

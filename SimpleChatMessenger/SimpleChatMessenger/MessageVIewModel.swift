@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 
 class MessageViewModel: ObservableObject {
-    @Published var messages = [messageDataType]()
+    @Published var messages = [messageElement]()
     
     init() {
         let db = Firestore.firestore()
@@ -25,10 +25,16 @@ class MessageViewModel: ObservableObject {
                     if i.type == .added {
                         let name = i.document.get("name") as! String
                         let message = i.document.get("message") as! String
+                        let createdAt = i.document.get("createAt", serverTimestampBehavior: .estimate) as! Timestamp
+                        let createDate = createdAt.dateValue()
                         let id = i.document.documentID
-                        
-                        self.messages.append(messageDataType(id: id, name: name, message: message))
+
+                        self.messages.append(messageElement(id: id, name: name, message: message, createAt: createDate))
                     }
+                }
+                // 日付順に並べ替えする
+                self.messages.sort { before, after in
+                    return before.createAt < after.createAt ? true : false
                 }
             }
         }
@@ -37,8 +43,9 @@ class MessageViewModel: ObservableObject {
     func addMessage(message: String , user: String) {
         let data = [
             "message": message,
-            "name": user
-        ]
+            "name": user,
+            "createAt":FieldValue.serverTimestamp(),
+        ] as [String : Any]
         
         let db = Firestore.firestore()
         
@@ -51,12 +58,4 @@ class MessageViewModel: ObservableObject {
             print("success")
         }
     }
-    
-}
-
-
-struct messageDataType: Identifiable {
-    var id: String
-    var name: String
-    var message: String
 }

@@ -50,7 +50,7 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
-        .animation(.default)
+        .animation(.default, value: name != "")
     }
 }
 
