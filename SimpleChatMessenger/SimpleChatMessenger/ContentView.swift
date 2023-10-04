@@ -40,12 +40,12 @@ struct ContentView: View {
                         .frame(width: 100, height: 54)
                         .background(Color.orange)
                         .foregroundStyle(Color.white)
-                        .cornerRadius(27)
+                        .clipShape(RoundedRectangle(cornerRadius: 27))
                         .padding(.bottom, 15)
                     }
                 }
                 .background(Color.white)
-                .cornerRadius(20)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
             }
             .edgesIgnoringSafeArea(.all)

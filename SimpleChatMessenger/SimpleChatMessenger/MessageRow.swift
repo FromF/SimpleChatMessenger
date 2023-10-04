@@ -23,7 +23,7 @@ struct MessageRow: View {
                     Text(message)
                         .padding(8)
                         .background(Color.red)
-                        .cornerRadius(6)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
                         .foregroundStyle(Color.white)
                     Text(date.text)
                         .font(.callout)
@@ -33,7 +33,7 @@ struct MessageRow: View {
                     Text(message)
                         .padding(8)
                         .background(Color.green)
-                        .cornerRadius(6)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
                         .foregroundStyle(Color.white)
 
                     HStack {
