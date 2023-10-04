@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var name = ""
+    @State private var name = ""
     
     var body: some View {
         NavigationView {
@@ -23,23 +22,24 @@ struct ContentView: View {
                     .frame(width: 60, height: 60)
                         .padding(.top, 12)
                     
-                    TextField("Name ", text: $name)
+                    TextField("Name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     
-                    if name != "" {
-                        NavigationLink(destination: MessageView(name: name)) {
+                    if name.isEmpty == false {
+                        NavigationLink {
+                            MessageView(name: name)
+                        } label: {
                             HStack {
                                 Text("Join")
                                 Image(systemName: "arrow.right.circle.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
                             }
-                            
                         }
                         .frame(width: 100, height: 54)
                         .background(Color.orange)
-                        .foregroundColor(Color.white)
+                        .foregroundStyle(Color.white)
                         .cornerRadius(27)
                         .padding(.bottom, 15)
                     }
@@ -50,12 +50,10 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
-        .animation(.default, value: name != "")
+        .animation(.default, value: name.isEmpty == false)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

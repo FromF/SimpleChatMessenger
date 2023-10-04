@@ -9,28 +9,33 @@
 import SwiftUI
 
 struct MessageView: View {
-    var name = ""
-    @ObservedObject var messageVM = MessageViewModel()
-    @State var typeMessage = ""
+    let name: String
+    
+    private var messageVM = MessageViewModel()
+    @State private var typeMessage = ""
+    
+    init(name: String) {
+        self.name = name
+    }
     
     var body: some View {
         VStack {
-            List(messageVM.messages, id: \.id) {i in
-                if i.name == self.name {
-                    MessageRow(message: i.message, isMyMessage: true, user:i.name, date: i.createAt)
+            List(messageVM.messages, id: \.id) {message in
+                if message.name == name {
+                    MessageRow(message: message.message, isMyMessage: true, user:message.name, date: message.createAt)
                 } else {
-                    MessageRow(message: i.message, isMyMessage: false, user:i.name, date: i.createAt)
+                    MessageRow(message: message.message, isMyMessage: false, user:message.name, date: message.createAt)
                 }
             }
-            .navigationBarTitle("Chats",displayMode: .inline)
+            .navigationBarTitle("Chats", displayMode: .inline)
             HStack {
                 TextField("Message", text: $typeMessage)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Button(action: {
-                    self.messageVM.addMessage(message: self.typeMessage, user: self.name)
-                    self.typeMessage = ""
-                }) {
+                Button {
+                    messageVM.addMessage(message: typeMessage, user: name)
+                    typeMessage = ""
+                } label: {
                     Image(systemName: "arrow.up.circle.fill")
                 }
             }
@@ -39,8 +44,6 @@ struct MessageView: View {
     }
 }
 
-struct MessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageView(name: "Tester")
-    }
+#Preview {
+    MessageView(name: "Tester")
 }

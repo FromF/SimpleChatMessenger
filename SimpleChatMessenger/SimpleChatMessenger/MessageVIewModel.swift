@@ -9,13 +9,14 @@
 import Foundation
 import FirebaseFirestore
 
-class MessageViewModel: ObservableObject {
-    @Published var messages = [messageElement]()
+@Observable class MessageViewModel {
+    private(set) var messages: [messageElement] = []
+    private var lister: ListenerRegistration?
     
     init() {
         let db = Firestore.firestore()
         
-        db.collection("messages").addSnapshotListener { (snap, error) in
+        lister = db.collection("messages").addSnapshotListener { (snap, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -38,6 +39,10 @@ class MessageViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    deinit {
+        lister?.remove()
     }
     
     func addMessage(message: String , user: String) {

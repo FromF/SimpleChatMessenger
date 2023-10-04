@@ -24,7 +24,7 @@ struct MessageRow: View {
                         .padding(8)
                         .background(Color.red)
                         .cornerRadius(6)
-                        .foregroundColor(Color.white)
+                        .foregroundStyle(Color.white)
                     Text(date.text)
                         .font(.callout)
                 }
@@ -34,8 +34,8 @@ struct MessageRow: View {
                         .padding(8)
                         .background(Color.green)
                         .cornerRadius(6)
-                        .foregroundColor(Color.white)
-                    
+                        .foregroundStyle(Color.white)
+
                     HStack {
                         Text(user)
                         
@@ -50,11 +50,9 @@ struct MessageRow: View {
     }
 }
 
-struct messageRow_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            MessageRow(message: "Hoge", isMyMessage: false, user: "other", date: Date())
-            MessageRow(message: "Hoge", isMyMessage: true, user: "other", date: Date())
-        }
+#Preview {
+    List {
+        MessageRow(message: "Hoge", isMyMessage: false, user: "other", date: Date())
+        MessageRow(message: "Hoge", isMyMessage: true, user: "other", date: Date())
     }
 }
