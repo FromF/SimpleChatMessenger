@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct messageElement: Identifiable {
-    var id: String
+struct MessageElement: Codable {
+    @DocumentID var id: String?
     var name: String
     var message: String
     var createAt: Date

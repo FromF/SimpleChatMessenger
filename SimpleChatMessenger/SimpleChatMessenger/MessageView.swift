@@ -33,7 +33,7 @@ struct MessageView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button {
-                    messageVM.addMessage(message: typeMessage, user: name)
+                    messageVM.addMessage(message: typeMessage, name: name)
                     typeMessage = ""
                 } label: {
                     Image(systemName: "arrow.up.circle.fill")

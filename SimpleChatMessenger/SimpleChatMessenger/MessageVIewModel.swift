@@ -10,32 +10,34 @@ import Foundation
 import FirebaseFirestore
 
 @Observable class MessageViewModel {
-    private(set) var messages: [messageElement] = []
+    private(set) var messages: [MessageElement] = []
     private var lister: ListenerRegistration?
+    /// コレクションの名称
+    private let collectionName = "messages"
     
     init() {
         let db = Firestore.firestore()
         
-        lister = db.collection("messages").addSnapshotListener { (snap, error) in
-            if let error = error {
+        lister = db.collection(collectionName).addSnapshotListener { (querySnapshot, error) in
+            if let error {
                 print(error.localizedDescription)
                 return
             }
-            if let snap = snap {
-                for i in snap.documentChanges {
-                    if i.type == .added {
-                        let name = i.document.get("name") as! String
-                        let message = i.document.get("message") as! String
-                        let createdAt = i.document.get("createAt", serverTimestampBehavior: .estimate) as! Timestamp
-                        let createDate = createdAt.dateValue()
-                        let id = i.document.documentID
-
-                        self.messages.append(messageElement(id: id, name: name, message: message, createAt: createDate))
+            if let querySnapshot {
+                for documentChange in querySnapshot.documentChanges {
+                    if documentChange.type == .added {
+                        do {
+                            // Codableを使って構造体に変換する
+                            let message = try documentChange.document.data(as: MessageElement.self)
+                            self.messages.append(message)
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
                 // 日付順に並べ替えする
-                self.messages.sort { before, after in
-                    return before.createAt < after.createAt ? true : false
+                self.messages.sort { lhs, rhs in
+                    return lhs.createAt < rhs.createAt ? true : false
                 }
             }
         }
@@ -45,22 +47,20 @@ import FirebaseFirestore
         lister?.remove()
     }
     
-    func addMessage(message: String , user: String) {
-        let data = [
-            "message": message,
-            "name": user,
-            "createAt":FieldValue.serverTimestamp(),
-        ] as [String : Any]
-        
-        let db = Firestore.firestore()
-        
-        db.collection("messages").addDocument(data: data) { error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+    func addMessage(message: String , name: String) {
+        do {
+            let message = MessageElement(name: name, message: message, createAt: Date())
+            let db = Firestore.firestore()
+            try db.collection(collectionName).addDocument(from: message) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                print("success")
             }
-            
-            print("success")
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
